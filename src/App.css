@@ -26,3 +26,36 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 0 auto;
+  position: relative;
+}
+
+.button-collapse {
+  position: fixed;
+  left: 0;
+  top: calc(10vh + 64px);
+  bottom: 0;
+  height: 50vh;
+}
+
+.button-collapse .material-icons {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px
+}
+

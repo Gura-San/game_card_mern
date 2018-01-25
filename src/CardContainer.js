@@ -46,19 +46,25 @@ class CardContainer extends Component {
       <Card
         key={index}
         name={card.name}
+        img={card.cover.cloudinary_id}
       />
     ))
     return (
-      <div>
-        {cards}
-
-        <div className='form'>
-          <h1>Add card</h1>
-          <input type='number' name='newCard' value={_.newCard} onChange={e => this.cardInput(e)} placeholder='Enter Card ID' />
-          <input type='button' value='submit' onClick={() => this.submit()} />
-          <h3>{this.message}</h3>
-        </div>
+      <main class='main'>
+      <div className='form'>
+        <h1>Add card</h1>
+        <input type='number' name='newCard' value={_.newCard} onChange={e => this.cardInput(e)} placeholder='Enter Card ID' />
+        <input type='button' value='submit' onClick={() => this.submit()} />
+        <h3>{this.message}</h3>
       </div>
+          <div class='container'>
+            <div class='row'>
+              <div class='col s12 cards-container'>
+              {cards}
+              </div>
+            </div>
+          </div>
+        </main>
     )
   }
 }
